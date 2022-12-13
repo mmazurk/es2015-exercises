@@ -1,18 +1,18 @@
-function createInstructor(firstName, lastName){
-    return {
-      firstName: firstName,
-      lastName: lastName
-    }
+function createInstructor(firstName, lastName) {
+  return {
+    firstName: firstName,
+    lastName: lastName
   }
+}
 
 /* Write an ES2015 Version */
 
-function createInstructor(firstName, lastName){
-    return {
-      firstName,
-      lastName
-    }
+function createInstructor(firstName, lastName) {
+  return {
+    firstName,
+    lastName
   }
+}
 
 /* --------------------------------------------------------- */
 
@@ -25,34 +25,38 @@ instructor[favoriteNumber] = "That is my favorite!"
 /* Write an ES2015 Version */
 const favoriteNumber = 42;
 const instructor = {
-    firstName: "Colt",
-    [favoriteNumber]: "That is my favorite!"
+  firstName: "Colt",
+  [favoriteNumber]: "That is my favorite!"
 }
 
 /* --------------------------------------------------------- */
 
 var instructor = {
-    firstName: "Colt",
-    sayHi: function(){
-      return "Hi!";
-    },
-    sayBye: function(){
-      return this.firstName + " says bye!";
-    }
+  firstName: "Colt",
+  sayHi: function () {
+    return "Hi!";
+  },
+  sayBye: function () {
+    return this.firstName + " says bye!";
   }
+}
 
 /* Write an ES2015 Version */
 
-
-
-
-
-
+var instructor = {
+  firstName: "Colt",
+  sayHi() { return "Hi!" },
+  sayBye() { return instructor.firstName + " says bye!" }
+}
 
 /* --------------------------------------------------------- */
 
 function createAnimal(species, verb, noise) {
-
+  const newAnmial = {
+    species: species,
+    [verb]() { return noise }
+  }
+  return newAnmial;
 }
 
 const d = createAnimal("dog", "bark", "Woooof!")
